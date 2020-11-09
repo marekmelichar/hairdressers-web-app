@@ -127,7 +127,7 @@ const EditCustomerPage = () => {
           onChange={handleCommentsChange}
         />
       </>
-      <div style={{ marginTop: 30, marginLeft: 150 }}>
+      <div style={{ marginTop: 30, marginLeft: 150, marginBottom: 150 }}>
         <Link to={`${routes.AllCustomersPage}`}>Zpět</Link>
         <button style={{ marginLeft: 30 }}>Uložit</button>
       </div>

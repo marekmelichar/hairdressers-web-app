@@ -88,7 +88,7 @@ const AllCustomersPage = () => {
   return (
     <div className='App'>
       <ul>{renderListOfCustomers()}</ul>
-      <div style={{ marginTop: 100, marginLeft: 180 }}>
+      <div style={{ marginTop: 30, marginLeft: 150, marginBottom: 150 }}>
         <Link to={`${routes.CreateCustomerPage}`}>Vytvořit</Link>
       </div>
     </div>
