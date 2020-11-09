@@ -1,26 +1,48 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
 import './App.css';
 
-function App() {
+import AllCustomersPage from './AllCustomersPage';
+import CreateCustomerPage from './CreateCustomerPage';
+import EditCustomerPage from './EditCustomerPage';
+import CustomerDetailPage from './CustomerDetailPage';
+import NotFoundPage from './NotFoundPage';
+
+const routes = {
+  AllCustomersPage: process.env.REACT_APP_ROUTE_ALL_CUSTOMERS,
+  CreateCustomerPage: process.env.REACT_APP_ROUTE_CREATE_CUSTOMER,
+  EditCustomerPage: process.env.REACT_APP_ROUTE_EDIT_CUSTOMER,
+};
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route
+          exact
+          path={routes.AllCustomersPage}
+          component={AllCustomersPage}
+        />
+        <Route
+          exact
+          path={routes.CreateCustomerPage}
+          component={CreateCustomerPage}
+        />
+        <Route
+          exact
+          path={`${routes.EditCustomerPage}/:id`}
+          component={EditCustomerPage}
+        />
+        <Route
+          exact
+          path={`${routes.AllCustomersPage}/:id`}
+          component={CustomerDetailPage}
+        />
+        <Route path='*' component={NotFoundPage} />
+      </Switch>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
