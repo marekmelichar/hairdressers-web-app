@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Add homepage to package.json:
+
+"homepage": "/wp-content/plugins/react-wordpress/widget/build",
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

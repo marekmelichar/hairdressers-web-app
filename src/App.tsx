@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 
+import HomePage from './HomePage';
 import AllCustomersPage from './AllCustomersPage';
 import CreateCustomerPage from './CreateCustomerPage';
 import EditCustomerPage from './EditCustomerPage';
@@ -10,6 +11,7 @@ import CustomerDetailPage from './CustomerDetailPage';
 import NotFoundPage from './NotFoundPage';
 
 const routes = {
+  HomePage: process.env.REACT_APP_ROUTE_HOME,
   AllCustomersPage: process.env.REACT_APP_ROUTE_ALL_CUSTOMERS,
   CreateCustomerPage: process.env.REACT_APP_ROUTE_CREATE_CUSTOMER,
   EditCustomerPage: process.env.REACT_APP_ROUTE_EDIT_CUSTOMER,
@@ -19,6 +21,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
+        <Route exact path={routes.HomePage} component={HomePage} />
         <Route
           exact
           path={routes.AllCustomersPage}
