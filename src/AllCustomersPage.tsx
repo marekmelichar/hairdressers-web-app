@@ -17,7 +17,7 @@ const AllCustomersPage = () => {
   const fetchCustomers = async () => {
     try {
       const response = await axios.get(
-        'https://hairdressers.marekmelichar.cz/wp-json/hairdressers/v1/customers'
+        'https://janamelicharova.cz/wp-json/hairdressers/v1/customers'
       );
       // handle success
       setData(response.data.customers);
@@ -44,7 +44,7 @@ const AllCustomersPage = () => {
       // They clicked Yes
       axios
         .delete(
-          'https://hairdressers.marekmelichar.cz/wp-json/hairdressers/v1/customers',
+          'https://janamelicharova.cz/wp-json/hairdressers/v1/customers',
           { data: { id } }
         )
         .then((responseDelete) => {

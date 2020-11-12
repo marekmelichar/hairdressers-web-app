@@ -20,16 +20,13 @@ const CreateCustomerPage = () => {
     e.preventDefault();
 
     axios
-      .post(
-        `https://hairdressers.marekmelichar.cz/wp-json/hairdressers/v1/customers`,
-        {
-          color,
-          colorCode,
-          comments,
-          name,
-          price,
-        }
-      )
+      .post(`https://janamelicharova.cz/wp-json/hairdressers/v1/customers`, {
+        color,
+        colorCode,
+        comments,
+        name,
+        price,
+      })
       .then((createResponse) => {
         if (createResponse.data.row_inserted) {
           history.push(`${routes.AllCustomersPage}`);

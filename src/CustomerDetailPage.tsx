@@ -19,7 +19,7 @@ const CustomerDetailPage = () => {
   useEffect(() => {
     axios
       .get(
-        `https://hairdressers.marekmelichar.cz/wp-json/hairdressers/v1/customers?id=${id}&timestamp=${new Date().getTime()}`
+        `https://janamelicharova.cz/wp-json/hairdressers/v1/customers?id=${id}&timestamp=${new Date().getTime()}`
       )
       .then(function (response: AxiosResponse) {
         setColor(response.data.color || '');

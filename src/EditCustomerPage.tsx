@@ -20,7 +20,7 @@ const EditCustomerPage = () => {
   useEffect(() => {
     axios
       .get(
-        `https://hairdressers.marekmelichar.cz/wp-json/hairdressers/v1/customers?id=${id}&timestamp=${new Date().getTime()}`
+        `https://janamelicharova.cz/wp-json/hairdressers/v1/customers?id=${id}&timestamp=${new Date().getTime()}`
       )
       .then(function (response: AxiosResponse) {
         setColor(response.data.color || '');
@@ -39,17 +39,14 @@ const EditCustomerPage = () => {
     e.preventDefault();
 
     axios
-      .put(
-        `https://hairdressers.marekmelichar.cz/wp-json/hairdressers/v1/customers`,
-        {
-          id,
-          color,
-          colorCode,
-          comments,
-          name,
-          price,
-        }
-      )
+      .put(`https://janamelicharova.cz/wp-json/hairdressers/v1/customers`, {
+        id,
+        color,
+        colorCode,
+        comments,
+        name,
+        price,
+      })
       .then((updateResponse) => {
         if (updateResponse.data.row_updated) {
           history.push(`${routes.AllCustomersPage}`);
