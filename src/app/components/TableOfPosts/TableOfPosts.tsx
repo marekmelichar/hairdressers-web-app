@@ -16,11 +16,12 @@ const routes = {
 };
 
 interface IData {
-  header: string;
-  category: string;
-  language: string;
-  status: string;
-  date: string;
+  // header: string;
+  // category: string;
+  // language: string;
+  // status: string;
+  // date: string;
+  name: string;
 }
 
 interface IHeadCell {
@@ -114,11 +115,11 @@ function EnhancedTableHead(props: IEnhancedTableProps) {
 
 interface IPost {
   id: number;
-  header: string;
-  category: string;
-  language: string;
-  status: string;
-  date: string;
+  name: string;
+  color: string;
+  colorCode: string;
+  price: string;
+  comments: string;
 }
 
 interface IProps {
@@ -131,31 +132,31 @@ const TableOfPosts = (props: IProps) => {
   const history = useHistory();
 
   const [order, setOrder] = React.useState<Order>('asc');
-  const [orderBy, setOrderBy] = React.useState<keyof IData>('header');
+  const [orderBy, setOrderBy] = React.useState<keyof IData>('name');
 
   const { data } = props;
 
   const headCells: IHeadCell[] = [
     {
-      id: 'header',
+      id: 'name',
       label: t({ id: 'tableOfPosts.header', defaultMessage: 'Nadpis' }),
     },
-    {
-      id: 'category',
-      label: t({ id: 'tableOfPosts.category', defaultMessage: 'Kategorie' }),
-    },
-    {
-      id: 'language',
-      label: t({ id: 'tableOfPosts.language', defaultMessage: 'Jazyk' }),
-    },
-    {
-      id: 'status',
-      label: t({ id: 'tableOfPosts.status', defaultMessage: 'Stav' }),
-    },
-    {
-      id: 'date',
-      label: t({ id: 'tableOfPosts.date', defaultMessage: 'Datum' }),
-    },
+    // {
+    //   id: 'category',
+    //   label: t({ id: 'tableOfPosts.category', defaultMessage: 'Kategorie' }),
+    // },
+    // {
+    //   id: 'language',
+    //   label: t({ id: 'tableOfPosts.language', defaultMessage: 'Jazyk' }),
+    // },
+    // {
+    //   id: 'status',
+    //   label: t({ id: 'tableOfPosts.status', defaultMessage: 'Stav' }),
+    // },
+    // {
+    //   id: 'date',
+    //   label: t({ id: 'tableOfPosts.date', defaultMessage: 'Datum' }),
+    // },
   ];
 
   const handleRequestSort = (
@@ -183,11 +184,11 @@ const TableOfPosts = (props: IProps) => {
       {data &&
         stableSort(data, getComparator(order, orderBy)).map(
           (row: IPost, index: number) => {
-            const { date } = row;
-            const dateObject = new Date(date ? date : '');
-            const day = dateObject.getDay();
-            const month = dateObject.getMonth() + 1;
-            const year = dateObject.getFullYear();
+            // const { date } = row;
+            // const dateObject = new Date(date ? date : '');
+            // const day = dateObject.getDay();
+            // const month = dateObject.getMonth() + 1;
+            // const year = dateObject.getFullYear();
 
             const labelId = `enhanced-table-checkbox-${index}`;
 
@@ -201,9 +202,9 @@ const TableOfPosts = (props: IProps) => {
                   onClick={() => handlePostRowClick(row.id)}
                 >
                   <TableCell component='th' id={labelId} scope='row'>
-                    {row.header}
+                    {row.name}
                   </TableCell>
-                  <TableCell>
+                  {/* <TableCell>
                     {t({
                       id: `tableOfPosts.category.${row.category}`,
                       defaultMessage: 'Shipper',
@@ -220,8 +221,8 @@ const TableOfPosts = (props: IProps) => {
                       id: `tableOfPosts.status.${row.status}`,
                       defaultMessage: 'Koncept',
                     })}
-                  </TableCell>
-                  <TableCell>{`${day}.${month}.${year}`}</TableCell>
+                  </TableCell> */}
+                  {/* <TableCell>{`${day}.${month}.${year}`}</TableCell> */}
                 </TableRow>
               </TableBody>
             );

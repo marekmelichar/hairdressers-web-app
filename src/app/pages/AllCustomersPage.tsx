@@ -112,6 +112,8 @@ const AllCustomersPage: React.FC = () => {
   //   });
   // };
 
+  console.log('data', data);
+
   return (
     // <div className='App'>
     //   <TableOfPosts data={data} />
