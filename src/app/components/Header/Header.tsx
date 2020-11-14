@@ -6,17 +6,8 @@ import { Link, NavLink } from 'react-router-dom';
 // import { Logo } from '../../components';
 import { useStyles } from './styles';
 
-declare global {
-  // tslint:disable-next-line
-  interface Window {
-    ROUTE_EDITOR: string;
-    ROUTE_ADMINISTRATION: string;
-  }
-}
-
 const routes = {
-  editor: window.ROUTE_EDITOR,
-  administration: window.ROUTE_ADMINISTRATION,
+  AllCustomersPage: process.env.REACT_APP_ROUTE_ALL_CUSTOMERS,
 };
 
 const Header: React.FC = () => {
@@ -30,25 +21,29 @@ const Header: React.FC = () => {
     setOpenMobileMenu(!openMobileMenu);
   };
 
-  // const renderNavigation = () => {
-  //   return (
-  //     <Grid
-  //       container={true}
-  //       justify='flex-start'
-  //       className={classes.menuWrapper}
-  //     >
-  //       <NavLink to={`${routes.editor}`} exact={true}>
-  //         {t({ id: 'Header.nav.editor', defaultMessage: 'Editor' })}
-  //       </NavLink>
-  //       <NavLink to={`${routes.administration}`} exact={true}>
-  //         {t({
-  //           id: 'Header.nav.administration',
-  //           defaultMessage: 'Administrace',
-  //         })}
-  //       </NavLink>
-  //     </Grid>
-  //   );
-  // };
+  const renderNavigation = () => {
+    return (
+      // <Grid container={true} justify='flex-end' className={classes.menuWrapper}>
+      <Box>
+        {/* <NavLink to={`${routes.editor}`} exact={true}>
+          {t({ id: 'Header.nav.editor', defaultMessage: 'Editor' })}
+        </NavLink>
+        <NavLink to={`${routes.administration}`} exact={true}>
+          {t({
+            id: 'Header.nav.administration',
+            defaultMessage: 'Administrace',
+          })}
+        </NavLink> */}
+        <NavLink to={`${routes.AllCustomersPage}`} exact={true}>
+          {t({ id: 'Header.nav.editor', defaultMessage: 'Editor' })}
+        </NavLink>
+        {/* <NavLink to={`${routes.AllCustomersPage}`} exact={true}>
+          {t({ id: 'Header.nav.editor', defaultMessage: 'Editor' })}
+        </NavLink> */}
+        {/* </Grid> */}
+      </Box>
+    );
+  };
 
   const renderMobileNavigation = () => {
     return (
@@ -59,7 +54,7 @@ const Header: React.FC = () => {
         className={classes.mobileMenuWrapper}
       >
         <NavLink
-          to={`${routes.editor}`}
+          to={`${routes.AllCustomersPage}`}
           exact={true}
           onClick={handleToggleMobileMenu}
         >
@@ -97,13 +92,15 @@ const Header: React.FC = () => {
                   <Menu />
                 </Box>
                 <Box className={classes.appLogoWrapper}>
-                  <Link to={`${routes.editor}`}>
+                  <Link to={`${routes.AllCustomersPage}`}>
                     {/* <Logo /> */}
                     LOGO
                   </Link>
                 </Box>
               </Grid>
             </Grid>
+            {/* <Box>{renderNavigation()}</Box> */}
+            {renderNavigation()}
           </Grid>
         </Grid>
         <Grid item={true} lg={2} />
