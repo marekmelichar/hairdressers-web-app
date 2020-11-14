@@ -1,3 +1,5 @@
+/* eslint-disable import/no-anonymous-default-export */
+
 /**
  * Global CSS overrides
  *

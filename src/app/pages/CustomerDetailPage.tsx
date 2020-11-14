@@ -31,7 +31,7 @@ const CustomerDetailPage = () => {
       .catch(function (error) {
         console.log('CustomerDetail Error', error);
       });
-  }, []);
+  }, [id]);
 
   const handleColorChange = (e: any) => {
     setColor(e.target.value);

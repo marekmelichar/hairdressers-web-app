@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ApolloClient, ApolloProvider } from '@apollo/client';
+import { cache } from './app/cache';
 import './index.css';
 import App from './app/App';
 // import reportWebVitals from './reportWebVitals';
 
+const client = new ApolloClient({
+  cache,
+});
+
 const target = document.getElementById('erw-root');
 if (target) {
-  ReactDOM.render(<App />, target);
+  ReactDOM.render(
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>,
+    target
+  );
 }
 
 // If you want to start measuring performance in your app, pass a function

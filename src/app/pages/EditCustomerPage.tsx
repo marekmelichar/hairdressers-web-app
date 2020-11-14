@@ -33,7 +33,7 @@ const EditCustomerPage = () => {
         // handle error
         console.log('Customer Edit Error', error);
       });
-  }, []);
+  }, [id]);
 
   const handleFormSubmit = (e: any) => {
     e.preventDefault();

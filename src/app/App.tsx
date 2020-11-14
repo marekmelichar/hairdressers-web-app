@@ -8,10 +8,12 @@ import CreateCustomerPage from './pages/CreateCustomerPage';
 import EditCustomerPage from './pages/EditCustomerPage';
 import CustomerDetailPage from './pages/CustomerDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
-import { Header } from './components';
+import { Header, CustomSnackBar } from './components';
 import { locales, TLocale } from './i18n';
 import './App.css';
 import theme from './theme';
+import { useReactiveVar } from '@apollo/client';
+import { snackbarMessageVar } from './cache';
 
 const routes = {
   HomePage: process.env.REACT_APP_ROUTE_HOME,
@@ -20,7 +22,8 @@ const routes = {
   EditCustomerPage: process.env.REACT_APP_ROUTE_EDIT_CUSTOMER,
 };
 
-const App = () => {
+const App: React.FC = () => {
+  const snackbarMessage = useReactiveVar(snackbarMessageVar);
   const currentLocale: TLocale = 'cs';
 
   return (
@@ -57,6 +60,20 @@ const App = () => {
             />
             <Route path='*' component={NotFoundPage} />
           </Switch>
+          {snackbarMessage.error && (
+            <CustomSnackBar
+              message={snackbarMessage}
+              severityIndex={0}
+              locationName={snackbarMessage.locationName}
+            />
+          )}
+          {snackbarMessage.success && (
+            <CustomSnackBar
+              message={snackbarMessage}
+              severityIndex={1}
+              locationName={snackbarMessage.locationName}
+            />
+          )}
         </ThemeProvider>
       </IntlProvider>
     </BrowserRouter>

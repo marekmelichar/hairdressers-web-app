@@ -30,25 +30,25 @@ const Header: React.FC = () => {
     setOpenMobileMenu(!openMobileMenu);
   };
 
-  const renderNavigation = () => {
-    return (
-      <Grid
-        container={true}
-        justify='flex-start'
-        className={classes.menuWrapper}
-      >
-        <NavLink to={`${routes.editor}`} exact={true}>
-          {t({ id: 'Header.nav.editor', defaultMessage: 'Editor' })}
-        </NavLink>
-        <NavLink to={`${routes.administration}`} exact={true}>
-          {t({
-            id: 'Header.nav.administration',
-            defaultMessage: 'Administrace',
-          })}
-        </NavLink>
-      </Grid>
-    );
-  };
+  // const renderNavigation = () => {
+  //   return (
+  //     <Grid
+  //       container={true}
+  //       justify='flex-start'
+  //       className={classes.menuWrapper}
+  //     >
+  //       <NavLink to={`${routes.editor}`} exact={true}>
+  //         {t({ id: 'Header.nav.editor', defaultMessage: 'Editor' })}
+  //       </NavLink>
+  //       <NavLink to={`${routes.administration}`} exact={true}>
+  //         {t({
+  //           id: 'Header.nav.administration',
+  //           defaultMessage: 'Administrace',
+  //         })}
+  //       </NavLink>
+  //     </Grid>
+  //   );
+  // };
 
   const renderMobileNavigation = () => {
     return (

@@ -1,5 +1,7 @@
-import Header from './Header';
+import Header from './Header/Header';
+import CustomSnackBar from './CustomSnackBar/CustomSnackBar';
 
 export {
-  Header
+  Header,
+  CustomSnackBar,
 };
