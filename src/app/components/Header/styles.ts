@@ -33,24 +33,24 @@ export const useStyles = makeStyles((theme: Theme) =>
         fontSize: theme.typography.pxToRem(16),
         color: theme.palette.grey[500],
         fontWeight: 500,
-        marginRight: theme.typography.pxToRem(25),
+        marginRight: theme.typography.pxToRem(15),
       },
       '& .active': {
         color: theme.palette.primary.main,
-        borderBottom: '1px solid',
-        borderBottomColor: theme.palette.primary.main,
+        // borderBottom: '1px solid',
+        // borderBottomColor: theme.palette.primary.main,
       },
     },
     mobileMenuDrawerWrapper: {
       '& .MuiDrawer-paper': {
         backgroundColor: theme.palette.primary.main,
-        paddingTop: theme.typography.pxToRem(60),
-        [theme.breakpoints.down('md')]: {
-          paddingTop: theme.typography.pxToRem(60),
-        },
-        [theme.breakpoints.down('xs')]: {
-          paddingTop: theme.typography.pxToRem(100),
-        },
+        // paddingTop: theme.typography.pxToRem(60),
+        // [theme.breakpoints.down('md')]: {
+        //   paddingTop: theme.typography.pxToRem(60),
+        // },
+        // [theme.breakpoints.down('xs')]: {
+        //   paddingTop: theme.typography.pxToRem(100),
+        // },
       },
     },
     mobileMenuWrapper: {
@@ -69,21 +69,21 @@ export const useStyles = makeStyles((theme: Theme) =>
         color: theme.palette.primary.contrastText,
       },
     },
-    user: {
-      [theme.breakpoints.down('xs')]: {
-        width: '100%',
-      },
-    },
-    userSectionWrapper: {
-      '& .MuiButton-text': {
-        paddingRight: 0,
-      },
-      [theme.breakpoints.down('md')]: {
-        paddingRight: theme.typography.pxToRem(15),
-      },
-      [theme.breakpoints.down('xs')]: {
-        justifyContent: 'center',
-      },
-    },
+    // user: {
+    //   [theme.breakpoints.down('xs')]: {
+    //     width: '100%',
+    //   },
+    // },
+    // userSectionWrapper: {
+    //   '& .MuiButton-text': {
+    //     paddingRight: 0,
+    //   },
+    //   [theme.breakpoints.down('md')]: {
+    //     paddingRight: theme.typography.pxToRem(15),
+    //   },
+    //   [theme.breakpoints.down('xs')]: {
+    //     justifyContent: 'center',
+    //   },
+    // },
   }),
 );

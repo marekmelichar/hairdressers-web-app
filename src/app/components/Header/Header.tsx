@@ -13,7 +13,6 @@ const routes = {
 const Header: React.FC = () => {
   const classes = useStyles();
   const t = useFormatMessage();
-  // const userAuth = userAuthentication();
 
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
@@ -23,24 +22,10 @@ const Header: React.FC = () => {
 
   const renderNavigation = () => {
     return (
-      // <Grid container={true} justify='flex-end' className={classes.menuWrapper}>
-      <Box>
-        {/* <NavLink to={`${routes.editor}`} exact={true}>
-          {t({ id: 'Header.nav.editor', defaultMessage: 'Editor' })}
-        </NavLink>
-        <NavLink to={`${routes.administration}`} exact={true}>
-          {t({
-            id: 'Header.nav.administration',
-            defaultMessage: 'Administrace',
-          })}
-        </NavLink> */}
+      <Box className={classes.menuWrapper}>
         <NavLink to={`${routes.AllCustomersPage}`} exact={true}>
-          {t({ id: 'Header.nav.editor', defaultMessage: 'Editor' })}
+          {t({ id: 'Header.nav.customers', defaultMessage: 'Zákázníci' })}
         </NavLink>
-        {/* <NavLink to={`${routes.AllCustomersPage}`} exact={true}>
-          {t({ id: 'Header.nav.editor', defaultMessage: 'Editor' })}
-        </NavLink> */}
-        {/* </Grid> */}
       </Box>
     );
   };
@@ -58,7 +43,7 @@ const Header: React.FC = () => {
           exact={true}
           onClick={handleToggleMobileMenu}
         >
-          {t({ id: 'Header.nav.editor', defaultMessage: 'Editor' })}
+          {t({ id: 'Header.nav.customers', defaultMessage: 'Zákázníci' })}
         </NavLink>
       </Grid>
     );
@@ -99,7 +84,6 @@ const Header: React.FC = () => {
                 </Box>
               </Grid>
             </Grid>
-            {/* <Box>{renderNavigation()}</Box> */}
             {renderNavigation()}
           </Grid>
         </Grid>
