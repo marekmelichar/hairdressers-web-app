@@ -4,18 +4,6 @@ export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     table: {
       marginTop: theme.typography.pxToRem(40),
-      // width: '100%',
-      // overflowX: 'hidden',
-      // '& thead': {
-      //   backgroundColor: theme.palette.grey['100'],
-      // },
-      // '& .MuiTableCell-root': {
-      //   padding: `${theme.typography.pxToRem(13)} ${theme.typography.pxToRem(16)}`,
-      // },
-      // [theme.breakpoints.down('xs')]: {
-      //   overflowX: 'scroll',
-      //   display: 'block',
-      // },
     },
     visuallyHidden: {
       border: 0,
@@ -30,18 +18,6 @@ export const useStyles = makeStyles((theme: Theme) =>
     },
     tableRow: {
       cursor: 'pointer',
-      // '& .MuiTableCell-root': {
-      //   borderTop: `1px solid ${theme.palette.grey['100']}`,
-      // },
-      // '& th': {
-      //   borderLeft: `1px solid ${theme.palette.grey['100']}`,
-      // },
-      // '& td:last-child': {
-      //   borderRight: `1px solid ${theme.palette.grey['100']}`,
-      // },
-    },
-    spacer: {
-      // height: theme.typography.pxToRem(10),
     },
   }),
 );

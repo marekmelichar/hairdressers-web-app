@@ -16,11 +16,6 @@ const routes = {
 };
 
 interface IData {
-  // header: string;
-  // category: string;
-  // language: string;
-  // status: string;
-  // date: string;
   name: string;
 }
 
@@ -141,22 +136,6 @@ const TableOfPosts = (props: IProps) => {
       id: 'name',
       label: t({ id: 'tableOfPosts.header', defaultMessage: 'Nadpis' }),
     },
-    // {
-    //   id: 'category',
-    //   label: t({ id: 'tableOfPosts.category', defaultMessage: 'Kategorie' }),
-    // },
-    // {
-    //   id: 'language',
-    //   label: t({ id: 'tableOfPosts.language', defaultMessage: 'Jazyk' }),
-    // },
-    // {
-    //   id: 'status',
-    //   label: t({ id: 'tableOfPosts.status', defaultMessage: 'Stav' }),
-    // },
-    // {
-    //   id: 'date',
-    //   label: t({ id: 'tableOfPosts.date', defaultMessage: 'Datum' }),
-    // },
   ];
 
   const handleRequestSort = (
@@ -194,7 +173,6 @@ const TableOfPosts = (props: IProps) => {
 
             return (
               <TableBody key={row.id}>
-                <TableRow className={classes.spacer} />
                 <TableRow
                   className={classes.tableRow}
                   hover={true}
@@ -204,25 +182,6 @@ const TableOfPosts = (props: IProps) => {
                   <TableCell component='th' id={labelId} scope='row'>
                     {row.name}
                   </TableCell>
-                  {/* <TableCell>
-                    {t({
-                      id: `tableOfPosts.category.${row.category}`,
-                      defaultMessage: 'Shipper',
-                    })}
-                  </TableCell>
-                  <TableCell>
-                    {t({
-                      id: `tableOfPosts.language.${row.language}`,
-                      defaultMessage: 'Slovenčina',
-                    })}
-                  </TableCell>
-                  <TableCell>
-                    {t({
-                      id: `tableOfPosts.status.${row.status}`,
-                      defaultMessage: 'Koncept',
-                    })}
-                  </TableCell> */}
-                  {/* <TableCell>{`${day}.${month}.${year}`}</TableCell> */}
                 </TableRow>
               </TableBody>
             );
