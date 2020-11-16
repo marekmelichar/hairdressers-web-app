@@ -1,0 +1,14 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "watchForFileChanges": true,
+  "video": false,
+  "viewportWidth": 1920,
+  "viewportHeight": 1080,
+  "projectId": "TFSCA1",
+  "experimentalComponentTesting": true,
+  "experimentalNetworkStubbing": true,
+  "componentFolder": "cypress/component",
+  "env": {
+    "coverage": false
+  }
+}

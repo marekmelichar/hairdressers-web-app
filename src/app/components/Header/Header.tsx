@@ -4,7 +4,7 @@ import { Menu } from '@material-ui/icons';
 import { useFormatMessage } from 'react-intl-hooks';
 import { Link, NavLink } from 'react-router-dom';
 // import { Logo } from '../../components';
-import { useStyles } from './styles';
+import useStyles from './styles';
 
 const routes = {
   AllCustomersPage: process.env.REACT_APP_ROUTE_ALL_CUSTOMERS,
@@ -23,7 +23,7 @@ const Header: React.FC = () => {
   const renderNavigation = () => {
     return (
       <Box className={classes.menuWrapper}>
-        <NavLink to={`${routes.AllCustomersPage}`} exact={true}>
+        <NavLink to={`${routes.AllCustomersPage}`} exact>
           {t({ id: 'Header.nav.customers', defaultMessage: 'Zákazníci' })}
         </NavLink>
       </Box>
@@ -32,17 +32,8 @@ const Header: React.FC = () => {
 
   const renderMobileNavigation = () => {
     return (
-      <Grid
-        container={true}
-        justify='flex-start'
-        direction='column'
-        className={classes.mobileMenuWrapper}
-      >
-        <NavLink
-          to={`${routes.AllCustomersPage}`}
-          exact={true}
-          onClick={handleToggleMobileMenu}
-        >
+      <Grid container justify="flex-start" direction="column" className={classes.mobileMenuWrapper}>
+        <NavLink to={`${routes.AllCustomersPage}`} exact onClick={handleToggleMobileMenu}>
           {t({ id: 'Header.nav.customers', defaultMessage: 'Zákazníci' })}
         </NavLink>
       </Grid>
@@ -51,24 +42,12 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <Grid
-        container={true}
-        justify='space-between'
-        alignItems='center'
-        className={classes.root}
-      >
-        <Grid item={true} lg={2} />
-        <Grid
-          item={true}
-          xs={true}
-          sm={true}
-          md={true}
-          lg={true}
-          className={classes.header}
-        >
-          <Grid container={true} justify='space-between' alignItems='center'>
-            <Grid item={true} md={2}>
-              <Grid container={true} justify='flex-start' alignItems='center'>
+      <Grid container justify="space-between" alignItems="center" className={classes.root}>
+        <Grid item lg={2} />
+        <Grid item xs sm md lg className={classes.header}>
+          <Grid container justify="space-between" alignItems="center">
+            <Grid item md={2}>
+              <Grid container justify="flex-start" alignItems="center">
                 <Box
                   display={{ xs: 'block', md: 'none' }}
                   className={classes.menuIconWrapper}
@@ -87,11 +66,11 @@ const Header: React.FC = () => {
             {renderNavigation()}
           </Grid>
         </Grid>
-        <Grid item={true} lg={2} />
+        <Grid item lg={2} />
       </Grid>
       <Drawer
         className={classes.mobileMenuDrawerWrapper}
-        anchor='left'
+        anchor="left"
         open={openMobileMenu}
         onClose={handleToggleMobileMenu}
       >

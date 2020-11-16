@@ -2,6 +2,7 @@ import React from 'react';
 import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import { IntlProvider } from 'react-intl-hooks';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { useReactiveVar } from '@apollo/client';
 import HomePage from './pages/HomePage';
 import AllCustomersPage from './pages/AllCustomersPage';
 import CreateCustomerPage from './pages/CreateCustomerPage';
@@ -12,7 +13,6 @@ import { Header, CustomSnackBar } from './components';
 import { locales, TLocale } from './i18n';
 import './App.css';
 import theme from './theme';
-import { useReactiveVar } from '@apollo/client';
 import { snackbarMessageVar } from './cache';
 
 const routes = {
@@ -28,37 +28,17 @@ const App: React.FC = () => {
 
   return (
     <BrowserRouter>
-      <IntlProvider
-        locale={currentLocale}
-        messages={locales[currentLocale]}
-        defaultLocale='cs'
-      >
+      <IntlProvider locale={currentLocale} messages={locales[currentLocale]} defaultLocale="cs">
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Header />
           <Switch>
             <Route exact path={routes.HomePage} component={HomePage} />
-            <Route
-              exact
-              path={routes.AllCustomersPage}
-              component={AllCustomersPage}
-            />
-            <Route
-              exact
-              path={routes.CreateCustomerPage}
-              component={CreateCustomerPage}
-            />
-            <Route
-              exact
-              path={`${routes.EditCustomerPage}/:id`}
-              component={EditCustomerPage}
-            />
-            <Route
-              exact
-              path={`${routes.AllCustomersPage}/:id`}
-              component={CustomerDetailPage}
-            />
-            <Route path='*' component={NotFoundPage} />
+            <Route exact path={routes.AllCustomersPage} component={AllCustomersPage} />
+            <Route exact path={routes.CreateCustomerPage} component={CreateCustomerPage} />
+            <Route exact path={`${routes.EditCustomerPage}/:id`} component={EditCustomerPage} />
+            <Route exact path={`${routes.AllCustomersPage}/:id`} component={CustomerDetailPage} />
+            <Route path="*" component={NotFoundPage} />
           </Switch>
           {snackbarMessage.error && (
             <CustomSnackBar

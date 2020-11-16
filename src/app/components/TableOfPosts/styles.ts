@@ -1,6 +1,6 @@
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
-export const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     table: {
       marginTop: theme.typography.pxToRem(40),
@@ -21,3 +21,5 @@ export const useStyles = makeStyles((theme: Theme) =>
     },
   }),
 );
+
+export default useStyles;
