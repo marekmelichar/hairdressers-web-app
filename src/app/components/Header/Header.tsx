@@ -24,7 +24,7 @@ const Header: React.FC = () => {
     return (
       <Box className={classes.menuWrapper}>
         <NavLink to={`${routes.AllCustomersPage}`} exact={true}>
-          {t({ id: 'Header.nav.customers', defaultMessage: 'Zákázníci' })}
+          {t({ id: 'Header.nav.customers', defaultMessage: 'Zákazníci' })}
         </NavLink>
       </Box>
     );
@@ -43,7 +43,7 @@ const Header: React.FC = () => {
           exact={true}
           onClick={handleToggleMobileMenu}
         >
-          {t({ id: 'Header.nav.customers', defaultMessage: 'Zákázníci' })}
+          {t({ id: 'Header.nav.customers', defaultMessage: 'Zákazníci' })}
         </NavLink>
       </Grid>
     );

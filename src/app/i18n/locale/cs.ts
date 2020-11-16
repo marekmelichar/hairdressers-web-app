@@ -2,5 +2,5 @@
 export default {
   locale: 'cs',
 
-  'Header.nav.customers': 'Zákázníci',
+  'Header.nav.customers': 'Zákazníci',
 };
