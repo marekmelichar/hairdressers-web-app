@@ -3,7 +3,7 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     table: {
-      marginTop: theme.typography.pxToRem(40),
+      // marginTop: theme.typography.pxToRem(40),
     },
     visuallyHidden: {
       border: 0,

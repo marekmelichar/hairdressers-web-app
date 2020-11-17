@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles, Theme, createStyles, Grid } from '@material-ui/core';
-import { TableOfPosts } from '../components';
-import CommunicationManager from '../libs/communicationManager';
+import { TableOfPosts } from '../../components';
+import CommunicationManager from '../../libs/communicationManager';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     page: {
+      paddingTop: theme.typography.pxToRem(50),
+      paddingBottom: theme.typography.pxToRem(50),
       [theme.breakpoints.down('md')]: {
         paddingLeft: theme.typography.pxToRem(15),
         paddingRight: theme.typography.pxToRem(15),
