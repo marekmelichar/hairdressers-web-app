@@ -42,7 +42,13 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <Grid container justify="space-between" alignItems="center" className={classes.root}>
+      <Grid
+        data-cy="header"
+        container
+        justify="space-between"
+        alignItems="center"
+        className={classes.root}
+      >
         <Grid item lg={2} />
         <Grid item xs sm md lg className={classes.header}>
           <Grid container justify="space-between" alignItems="center">

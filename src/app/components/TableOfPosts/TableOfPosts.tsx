@@ -140,7 +140,7 @@ const TableOfPosts = (props: IProps) => {
   };
 
   return (
-    <Table className={classes.table} aria-label="table">
+    <Table data-cy="TableOfPosts" className={classes.table} aria-label="table">
       <EnhancedTableHead
         classes={classes}
         order={order}
