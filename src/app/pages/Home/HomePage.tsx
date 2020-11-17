@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles, Theme, createStyles, Grid } from '@material-ui/core';
 
@@ -25,12 +25,12 @@ const HomePage: React.FC = () => {
 
   return (
     <Grid container className={classes.page}>
-    <Grid item lg={2} />
-    <Grid item lg={8} md sm xs>
-      <Link to={`${routes.AllCustomersPage}`}>Vstoupit</Link>
+      <Grid item lg={2} />
+      <Grid item lg={8} md sm xs>
+        <Link to={`${routes.AllCustomersPage}`}>Vstoupit</Link>
+      </Grid>
+      <Grid item lg={2} />
     </Grid>
-    <Grid item lg={2} />
-  </Grid>
   );
 };
 
