@@ -22,14 +22,14 @@ const useStyles = makeStyles((theme: Theme) =>
     addPost: {
       '& a': {
         borderRadius: '50%',
-        border: `1px solid ${theme.palette.primary.main}`,
+        border: `1px solid ${theme.palette.success.main}`,
         width: theme.typography.pxToRem(48),
         height: theme.typography.pxToRem(48),
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         float: 'right',
-        color: theme.palette.primary.main,
+        color: theme.palette.success.main,
       },
     },
   }),
