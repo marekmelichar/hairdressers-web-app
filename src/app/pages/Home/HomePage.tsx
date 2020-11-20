@@ -27,7 +27,9 @@ const HomePage: React.FC = () => {
     <Grid container className={classes.page}>
       <Grid item lg={2} />
       <Grid item lg={8} md sm xs>
-        <Link to={`${routes.AllCustomersPage}`}>Vstoupit</Link>
+        <Link data-cy="homepage-link-to-customers" to={`${routes.AllCustomersPage}`}>
+          Vstoupit
+        </Link>
       </Grid>
       <Grid item lg={2} />
     </Grid>

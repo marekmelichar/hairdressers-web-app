@@ -161,12 +161,13 @@ const TableOfPosts = (props: IProps) => {
           return (
             <TableBody key={row.id}>
               <TableRow
+                data-cy="TableRow"
                 className={classes.tableRow}
                 hover
                 tabIndex={-1}
                 onClick={() => handlePostRowClick(row.id)}
               >
-                <TableCell component="th" id={labelId} scope="row">
+                <TableCell data-cy="TableCell" component="th" id={labelId} scope="row">
                   {row.name}
                 </TableCell>
               </TableRow>
