@@ -24,7 +24,12 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingTop: theme.typography.pxToRem(4),
       paddingLeft: theme.typography.pxToRem(15),
       margin: 'auto 0',
-      width: theme.typography.pxToRem(200),
+      [theme.breakpoints.down('sm')]: {
+        paddingTop: 0,
+        position: 'absolute',
+        left: '50%',
+        transform: 'translateX(-50%)',
+      },
     },
     menuWrapper: {
       paddingTop: theme.typography.pxToRem(2),
@@ -37,20 +42,11 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       '& .active': {
         color: theme.palette.primary.main,
-        // borderBottom: '1px solid',
-        // borderBottomColor: theme.palette.primary.main,
       },
     },
     mobileMenuDrawerWrapper: {
       '& .MuiDrawer-paper': {
         backgroundColor: theme.palette.primary.main,
-        // paddingTop: theme.typography.pxToRem(60),
-        // [theme.breakpoints.down('md')]: {
-        //   paddingTop: theme.typography.pxToRem(60),
-        // },
-        // [theme.breakpoints.down('xs')]: {
-        //   paddingTop: theme.typography.pxToRem(100),
-        // },
       },
     },
     mobileMenuWrapper: {
@@ -69,22 +65,6 @@ const useStyles = makeStyles((theme: Theme) =>
         color: theme.palette.primary.contrastText,
       },
     },
-    // user: {
-    //   [theme.breakpoints.down('xs')]: {
-    //     width: '100%',
-    //   },
-    // },
-    // userSectionWrapper: {
-    //   '& .MuiButton-text': {
-    //     paddingRight: 0,
-    //   },
-    //   [theme.breakpoints.down('md')]: {
-    //     paddingRight: theme.typography.pxToRem(15),
-    //   },
-    //   [theme.breakpoints.down('xs')]: {
-    //     justifyContent: 'center',
-    //   },
-    // },
   }),
 );
 

@@ -23,4 +23,14 @@ context('Customers page', () => {
       cy.get('[data-cy=TableCell]').first().should('exist').should('contain.text', 'Dana Šianská')
     });
   });
+
+  describe('Customers page has table', () => {
+    it('Should contain the + icon', () => {
+      cy.url().should('eq', 'http://localhost:3000/customers');
+
+      cy.get('[data-cy=addPostIcon]').find('a').should('exist').click()
+
+      cy.url().should('eq', 'http://localhost:3000/customers/create');
+    });
+  });
 });

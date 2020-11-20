@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles, Theme, createStyles, Grid } from '@material-ui/core';
+import { makeStyles, Theme, createStyles, Grid, Box } from '@material-ui/core';
 import { TableOfPosts } from '../../components';
 import CommunicationManager from '../../libs/communicationManager';
+import { Link } from 'react-router-dom';
+import AddIcon from '@material-ui/icons/Add';
+
+const routes = {
+  CreateCustomerPage: process.env.REACT_APP_ROUTE_CREATE_CUSTOMER,
+};
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -11,6 +17,19 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.down('md')]: {
         paddingLeft: theme.typography.pxToRem(15),
         paddingRight: theme.typography.pxToRem(15),
+      },
+    },
+    addPost: {
+      '& a': {
+        borderRadius: '50%',
+        border: `1px solid ${theme.palette.primary.main}`,
+        width: theme.typography.pxToRem(48),
+        height: theme.typography.pxToRem(48),
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        float: 'right',
+        color: theme.palette.primary.main,
       },
     },
   }),
@@ -38,6 +57,11 @@ const AllCustomersPage: React.FC = () => {
     <Grid container className={classes.page}>
       <Grid item lg={2} />
       <Grid item lg={8} md sm xs>
+        <Box data-cy="addPostIcon" className={classes.addPost}>
+          <Link to={`${routes.CreateCustomerPage}`}>
+            <AddIcon />
+          </Link>
+        </Box>
         <TableOfPosts data={data} />
       </Grid>
       <Grid item lg={2} />

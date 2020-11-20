@@ -22,7 +22,7 @@ const Header: React.FC = () => {
 
   const renderNavigation = () => {
     return (
-      <Box className={classes.menuWrapper}>
+      <Box className={classes.menuWrapper} display={{ xs: 'none', md: 'block' }}>
         <NavLink to={`${routes.AllCustomersPage}`} exact>
           {t({ id: 'Header.nav.customers', defaultMessage: 'Zákazníci' })}
         </NavLink>
