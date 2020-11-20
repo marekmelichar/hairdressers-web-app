@@ -5,5 +5,9 @@ export default {
   'Header.nav.customers': 'Customers',
 
   'update.post.success.message': 'Edited successfully',
-  'global.error.message': 'Server error'
+  'delete.post.success.message': 'Deleted successfully',
+  'global.error.message': 'Server error',
+  'Button.delete': 'Delete',
+  'Button.cancel': 'Cancel',
+  'delete.deleteModalTitle': 'Really delete?',
 };

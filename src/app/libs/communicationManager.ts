@@ -36,4 +36,16 @@ export default class CommunicationManager {
 
     return response.data;
   }
+
+  static async delete(url: string, data: any) {
+    const rootURL = process.env.REACT_APP_ROOT_URL + url;
+
+    const response = await axios.delete<any>(rootURL, data);
+
+    if (!response.data) {
+      return [];
+    }
+
+    return response.data;
+  }
 }

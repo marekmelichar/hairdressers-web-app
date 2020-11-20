@@ -50,6 +50,38 @@ const useStyles = makeStyles((theme: Theme) =>
     spinner: {
       position: 'absolute',
     },
+    modalButtonCancel: {
+      marginRight: theme.typography.pxToRem(30),
+    },
+    modalButtonDelete: {
+      position: 'absolute',
+      textTransform: 'none',
+      backgroundColor: theme.palette.error.main,
+      color: theme.palette.error.contrastText,
+      '&.MuiButton-contained:hover': {
+        backgroundColor: `${theme.palette.error.dark} !important`
+      },
+    },
+    dialogRoot: {
+      '& .MuiDialog-paperWidthSm': {
+        padding: theme.typography.pxToRem(30),
+      },
+      '& .MuiDialogTitle-root': {
+        marginBottom: theme.typography.pxToRem(30),
+      },
+    },
+    dialogSpinnerWrapper: {
+      position: 'relative',
+      width: theme.typography.pxToRem(110),
+    },
+    dialogSpinner: {
+      position: 'absolute',
+      top: theme.typography.pxToRem(6),
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: theme.typography.pxToRem(32),
+      height: theme.typography.pxToRem(32),
+    },
   }),
 );
 

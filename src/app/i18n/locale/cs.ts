@@ -5,5 +5,9 @@ export default {
   'Header.nav.customers': 'Zákazníci',
 
   'update.post.success.message': 'Úspěšně upraveno',
-  'global.error.message': 'Problém na serveru'
+  'delete.post.success.message': 'Úspěšně smazáno',
+  'global.error.message': 'Problém na serveru',
+  'Button.delete': 'Odstranit',
+  'Button.cancel': 'Zpět',
+  'delete.deleteModalTitle': 'Opravdu smazat?',
 };
