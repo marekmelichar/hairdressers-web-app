@@ -3,7 +3,7 @@ import { Box, Drawer, Grid } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
 import { useFormatMessage } from 'react-intl-hooks';
 import { Link, NavLink } from 'react-router-dom';
-// import { Logo } from '../../components';
+import Logo from '../../assets/media/logoJM.jpg';
 import useStyles from './styles';
 
 const routes = {
@@ -63,8 +63,7 @@ const Header: React.FC = () => {
                 </Box>
                 <Box className={classes.appLogoWrapper}>
                   <Link to={`${routes.AllCustomersPage}`}>
-                    {/* <Logo /> */}
-                    LOGO
+                    <img src={Logo} alt="logo" />
                   </Link>
                 </Box>
               </Grid>

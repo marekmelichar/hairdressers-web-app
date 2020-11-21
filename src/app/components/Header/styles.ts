@@ -11,8 +11,8 @@ const useStyles = makeStyles((theme: Theme) =>
     header: {
       borderBottom: '1px solid',
       borderBottomColor: theme.palette.grey[100],
-      paddingTop: theme.typography.pxToRem(5),
-      paddingBottom: theme.typography.pxToRem(5),
+      paddingTop: theme.typography.pxToRem(10),
+      paddingBottom: theme.typography.pxToRem(10),
     },
     menuIconWrapper: {
       paddingTop: theme.typography.pxToRem(4),
@@ -24,6 +24,11 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingTop: theme.typography.pxToRem(4),
       paddingLeft: theme.typography.pxToRem(15),
       margin: 'auto 0',
+      '& img': {
+        height: theme.typography.pxToRem(60),
+        paddingTop: theme.typography.pxToRem(8),
+        paddingBottom: theme.typography.pxToRem(4),
+      },
       [theme.breakpoints.down('sm')]: {
         paddingTop: 0,
         position: 'absolute',
