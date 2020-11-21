@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
     },
     form: {
-      width: '100%',
+      width: '90%',
       '& .MuiInputBase-root': {
         width: '100%',
       },
@@ -82,6 +82,16 @@ const useStyles = makeStyles((theme: Theme) =>
       width: theme.typography.pxToRem(32),
       height: theme.typography.pxToRem(32),
     },
+    deleteIcon: {
+      cursor: 'pointer',
+      textAlign: 'center',
+      marginTop: theme.typography.pxToRem(80),
+      marginBottom: theme.typography.pxToRem(80),
+      '& svg': {
+        fontSize: theme.typography.pxToRem(32),
+        fill: theme.palette.error.main
+      }
+    }
   }),
 );
 

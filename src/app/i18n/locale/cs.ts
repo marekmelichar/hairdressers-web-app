@@ -9,5 +9,5 @@ export default {
   'global.error.message': 'Problém na serveru',
   'Button.delete': 'Odstranit',
   'Button.cancel': 'Zpět',
-  'delete.deleteModalTitle': 'Opravdu smazat?',
+  'delete.deleteModalTitle': 'Opravdu smazat',
 };

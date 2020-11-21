@@ -170,7 +170,7 @@ const CustomerDetailPage: React.FC = () => {
             <Input
               name={name}
               value={content}
-              inputProps={{ 'aria-label': 'description' }}
+              inputProps={{ 'aria-label': heading }}
               onChange={handleInputChange}
             />
           </form>
@@ -201,7 +201,7 @@ const CustomerDetailPage: React.FC = () => {
               name={name}
               value={content}
               rows={8}
-              inputProps={{ 'aria-label': 'description' }}
+              inputProps={{ 'aria-label': heading }}
               onChange={handleInputChange}
             />
           </form>
@@ -221,7 +221,7 @@ const CustomerDetailPage: React.FC = () => {
           {renderAccordionInput('Kód barvy :', state.colorCode, 'colorCode')}
           {renderAccordionInput('Cena :', state.price, 'price')}
           {renderAccordionTextField('Poznámky :', state.comments, 'comments')}
-          <Box onClick={handleDelete}>
+          <Box onClick={handleDelete} className={classes.deleteIcon}>
             <DeleteForeverIcon />
           </Box>
         </Grid>
@@ -235,7 +235,7 @@ const CustomerDetailPage: React.FC = () => {
         className={classes.dialogRoot}
       >
         <DialogTitle id="simple-dialog-title">
-          {t({ id: 'delete.deleteModalTitle', defaultMessage: 'Opravdu smazat?' })}
+          {t({ id: 'delete.deleteModalTitle', defaultMessage: 'Opravdu smazat' })} {state.name} ?
         </DialogTitle>
         <Box display="flex" justifyContent="flex-end">
           <Button className={classes.modalButtonCancel} onClick={handleCancelButtonClick}>

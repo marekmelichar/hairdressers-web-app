@@ -9,5 +9,5 @@ export default {
   'global.error.message': 'Server error',
   'Button.delete': 'Delete',
   'Button.cancel': 'Cancel',
-  'delete.deleteModalTitle': 'Really delete?',
+  'delete.deleteModalTitle': 'Really delete',
 };
