@@ -6,7 +6,6 @@ import { useReactiveVar } from '@apollo/client';
 import HomePage from './pages/Home/HomePage';
 import AllCustomersPage from './pages/AllCustomers/AllCustomersPage';
 import CreateCustomerPage from './pages/CreateCustomer/CreateCustomerPage';
-import EditCustomerPage from './pages/EditCustomer/EditCustomerPage';
 import CustomerDetailPage from './pages/CustomerDetail/CustomerDetailPage';
 import NotFoundPage from './pages/404/NotFoundPage';
 import { Header, CustomSnackBar } from './components';
@@ -19,7 +18,6 @@ const routes = {
   HomePage: process.env.REACT_APP_ROUTE_HOME,
   AllCustomersPage: process.env.REACT_APP_ROUTE_ALL_CUSTOMERS,
   CreateCustomerPage: process.env.REACT_APP_ROUTE_CREATE_CUSTOMER,
-  EditCustomerPage: process.env.REACT_APP_ROUTE_EDIT_CUSTOMER,
 };
 
 const App: React.FC = () => {
@@ -36,7 +34,6 @@ const App: React.FC = () => {
             <Route exact path={routes.HomePage} component={HomePage} />
             <Route exact path={routes.AllCustomersPage} component={AllCustomersPage} />
             <Route exact path={routes.CreateCustomerPage} component={CreateCustomerPage} />
-            <Route exact path={`${routes.EditCustomerPage}/:id`} component={EditCustomerPage} />
             <Route exact path={`${routes.AllCustomersPage}/:id`} component={CustomerDetailPage} />
             <Route path="*" component={NotFoundPage} />
           </Switch>

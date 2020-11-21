@@ -1,12 +1,13 @@
 import React, { FormEvent, useCallback, useState } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import useStyles from './styles';
-// import axios from 'axios';
 import { useFormatMessage } from 'react-intl-hooks';
-import { Grid, Input, TextField } from '@material-ui/core';
+import { Box, Grid, TextField } from '@material-ui/core';
 import CommunicationManager from '../../libs/communicationManager';
 import { snackbarMessageVar } from '../../cache';
 import { IMessage } from '../../core';
+import CheckIcon from '@material-ui/icons/Check';
+import { CustomCircularProgress } from '../../components';
 
 const routes = {
   AllCustomersPage: process.env.REACT_APP_ROUTE_ALL_CUSTOMERS,
@@ -25,6 +26,7 @@ const CreateCustomerPage: React.FC = () => {
     price: '',
   });
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isNameValid, setIsNameValid] = useState<boolean>(true);
 
   const handleMessage = useCallback((mes: IMessage) => {
     snackbarMessageVar({ ...snackbarMessageVar(), ...mes });
@@ -44,18 +46,20 @@ const CreateCustomerPage: React.FC = () => {
         handleMessage({
           error: false,
           success: true,
-          messageId: 'update.post.success.message',
-          locationName: 'update-post-success',
+          messageId: 'create.post.success.message',
+          locationName: 'create-post-success',
         });
 
         setIsLoading(false);
+
+        history.push(`${routes.AllCustomersPage}`);
       }
     } catch (error) {
       handleMessage({
         error: true,
         success: false,
         messageId: 'global.error.message',
-        locationName: 'update-post-error',
+        locationName: 'create-post-error',
       });
 
       throw new Error(error);
@@ -63,19 +67,38 @@ const CreateCustomerPage: React.FC = () => {
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('e', e);
+    if (e.target.name === 'name') {
+      setIsNameValid(true);
+    }
 
     const value = e.target.value;
+
     setState({
       ...state,
       [e.target.name]: value,
     });
   };
 
+  const validate = () => {
+    let isValid = true;
+
+    if (!state.name) {
+      setIsNameValid(false);
+      isValid = false;
+    }
+
+    return isValid;
+  };
+
   const handleFormSubmit = (e: FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
-    savePost();
+  };
+
+  const handleSave = () => {
+    if (validate()) {
+      setIsLoading(true);
+      savePost();
+    }
   };
 
   return (
@@ -89,6 +112,14 @@ const CreateCustomerPage: React.FC = () => {
             value={state.name}
             inputProps={{ 'aria-label': 'name' }}
             onChange={handleInputChange}
+            error={!isNameValid}
+            helperText={
+              !isNameValid &&
+              t({
+                id: 'Input.name.error',
+                defaultMessage: 'Prosím vyplňte jméno',
+              })
+            }
           />
           <TextField
             name="color"
@@ -111,13 +142,6 @@ const CreateCustomerPage: React.FC = () => {
             inputProps={{ 'aria-label': 'price' }}
             onChange={handleInputChange}
           />
-          {/* <TextField
-            name="comments"
-            label={t({ id: 'Input.comments', defaultMessage: 'Poznámky' })}
-            value={state.comments}
-            inputProps={{ 'aria-label': 'comments' }}
-            onChange={handleInputChange}
-          /> */}
           <TextField
             multiline
             name="comments"
@@ -128,6 +152,14 @@ const CreateCustomerPage: React.FC = () => {
             onChange={handleInputChange}
           />
         </form>
+        <Box className={classes.spinnerWrapper}>
+          {isLoading && (
+            <Box className={classes.spinner}>
+              <CustomCircularProgress />
+            </Box>
+          )}
+          {!isLoading && <CheckIcon className={classes.checkIcon} onClick={handleSave} />}
+        </Box>
       </Grid>
       <Grid item lg={2} />
     </Grid>
