@@ -14,6 +14,10 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: theme.typography.pxToRem(12),
       fontWeight: theme.typography.fontWeightRegular,
     },
+    h1: {
+      marginBottom: theme.typography.pxToRem(50),
+      textAlign: 'center',
+    },
     accordionDetails: {
       display: 'flex',
       justifyContent: 'space-between',
@@ -59,7 +63,7 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: theme.palette.error.main,
       color: theme.palette.error.contrastText,
       '&.MuiButton-contained:hover': {
-        backgroundColor: `${theme.palette.error.dark} !important`
+        backgroundColor: `${theme.palette.error.dark} !important`,
       },
     },
     dialogRoot: {
@@ -89,9 +93,9 @@ const useStyles = makeStyles((theme: Theme) =>
       marginBottom: theme.typography.pxToRem(80),
       '& svg': {
         fontSize: theme.typography.pxToRem(32),
-        fill: theme.palette.error.main
-      }
-    }
+        fill: theme.palette.error.main,
+      },
+    },
   }),
 );
 
