@@ -2,7 +2,7 @@
 export default {
   locale: 'cs',
 
-  'Header.nav.customers': 'Zákazníci',
+  'Header.nav.customers': 'Klienti',
 
   'update.post.success.message': 'Úspěšně upraveno',
   'create.post.success.message': 'Úspěšně vytvořeno',
@@ -12,4 +12,5 @@ export default {
   'Button.cancel': 'Zpět',
   'delete.deleteModalTitle': 'Opravdu smazat',
   'Input.name.error': 'Prosím vyplňte jméno',
+  'tableOfPosts.header': 'Klienti',
 };

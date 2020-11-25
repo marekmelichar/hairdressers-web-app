@@ -161,7 +161,7 @@ const CustomerDetailPage: React.FC = () => {
 
   const renderAccordionInput = (heading: string, content: string, name: string) => {
     return (
-      <Accordion>
+      <Accordion expanded={heading === 'Jméno :'}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls={`${heading}-content`}>
           <Typography className={classes.heading}>{heading}</Typography>
         </AccordionSummary>
@@ -217,7 +217,7 @@ const CustomerDetailPage: React.FC = () => {
         <Grid item lg={2} />
         <Grid item lg={8} md sm xs>
           {renderAccordionInput('Jméno :', state.name, 'name')}
-          {renderAccordionInput('Barva :', state.color, 'color')}
+          {renderAccordionInput('Úkon :', state.color, 'color')}
           {renderAccordionInput('Kód barvy :', state.colorCode, 'colorCode')}
           {renderAccordionInput('Cena :', state.price, 'price')}
           {renderAccordionTextField('Poznámky :', state.comments, 'comments')}

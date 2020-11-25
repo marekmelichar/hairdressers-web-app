@@ -61,13 +61,15 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: theme.palette.primary.main,
       '& a': {
         fontSize: theme.typography.pxToRem(16),
-        color: theme.palette.primary.contrastText,
+        color: theme.palette.grey['900'],
+        // color: theme.palette.primary.contrastText,
         marginRight: theme.typography.pxToRem(25),
         fontWeight: 700,
         marginTop: theme.typography.pxToRem(24),
       },
       '& .active': {
-        color: theme.palette.primary.contrastText,
+        color: theme.palette.grey['900'],
+        // color: theme.palette.primary.contrastText,
       },
     },
   }),

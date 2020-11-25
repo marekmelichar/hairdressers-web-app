@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme: Theme) =>
     tableRow: {
       cursor: 'pointer',
     },
+    th: {
+      paddingTop: theme.typography.pxToRem(18),
+    },
   }),
 );
 

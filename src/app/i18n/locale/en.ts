@@ -12,4 +12,5 @@ export default {
   'Button.cancel': 'Cancel',
   'delete.deleteModalTitle': 'Really delete',
   'Input.name.error': 'Please fill up the name',
+  'tableOfPosts.header': 'Clients',
 };

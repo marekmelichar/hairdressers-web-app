@@ -24,7 +24,7 @@ const Header: React.FC = () => {
     return (
       <Box className={classes.menuWrapper} display={{ xs: 'none', md: 'block' }}>
         <NavLink to={`${routes.AllCustomersPage}`} exact>
-          {t({ id: 'Header.nav.customers', defaultMessage: 'Zákazníci' })}
+          {t({ id: 'Header.nav.customers', defaultMessage: 'Klienti' })}
         </NavLink>
       </Box>
     );
@@ -34,7 +34,7 @@ const Header: React.FC = () => {
     return (
       <Grid container justify="flex-start" direction="column" className={classes.mobileMenuWrapper}>
         <NavLink to={`${routes.AllCustomersPage}`} exact onClick={handleToggleMobileMenu}>
-          {t({ id: 'Header.nav.customers', defaultMessage: 'Zákazníci' })}
+          {t({ id: 'Header.nav.customers', defaultMessage: 'Klienti' })}
         </NavLink>
       </Grid>
     );

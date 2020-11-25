@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/NotoSans-Regular.ttf') format('opentype');
+ }
+ 
+ @font-face {
+   font-family: 'Noto Sans';
+   font-style: normal;
+   font-weight: 700;
+   src: url('./assets/fonts/NotoSans-Bold.ttf') format('opentype');
+}
+
 a {
   text-decoration: none;
+}
+
+body {
+  font-weight: 400;
 }

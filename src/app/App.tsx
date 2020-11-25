@@ -1,7 +1,7 @@
 import React from 'react';
 import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import { IntlProvider } from 'react-intl-hooks';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, HashRouter } from 'react-router-dom';
 import { useReactiveVar } from '@apollo/client';
 import HomePage from './pages/Home/HomePage';
 import AllCustomersPage from './pages/AllCustomers/AllCustomersPage';
@@ -25,7 +25,7 @@ const App: React.FC = () => {
   const currentLocale: TLocale = 'cs';
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <IntlProvider locale={currentLocale} messages={locales[currentLocale]} defaultLocale="cs">
         <ThemeProvider theme={theme}>
           <CssBaseline />
@@ -53,7 +53,7 @@ const App: React.FC = () => {
           )}
         </ThemeProvider>
       </IntlProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

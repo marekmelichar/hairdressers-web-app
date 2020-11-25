@@ -7,8 +7,10 @@
 export default {
   fontFamily: [
     // prefered font family
-    '"Open Sans"',
+    'Noto Sans',
     // prefered fallback font family
+    'Helvetica Neue',
+    '"Open Sans"',
     'Roboto',
     '-apple-system',
     'BlinkMacSystemFont',

@@ -125,7 +125,7 @@ const TableOfPosts = (props: IProps) => {
   const headCells: IHeadCell[] = [
     {
       id: 'name',
-      label: t({ id: 'tableOfPosts.header', defaultMessage: 'Nadpis' }),
+      label: t({ id: 'tableOfPosts.header', defaultMessage: 'Klienti' }),
     },
   ];
 
@@ -167,7 +167,13 @@ const TableOfPosts = (props: IProps) => {
                 tabIndex={-1}
                 onClick={() => handlePostRowClick(row.id)}
               >
-                <TableCell data-cy="TableCell" component="th" id={labelId} scope="row">
+                <TableCell
+                  data-cy="TableCell"
+                  component="th"
+                  id={labelId}
+                  scope="row"
+                  className={classes.th}
+                >
                   {row.name}
                 </TableCell>
               </TableRow>
