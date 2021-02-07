@@ -1,6 +1,6 @@
 # Add homepage to package.json:
 
-"homepage": "/wp-content/plugins/react-wordpress/widget/build",
+"homepage": "/wp-content/plugins/react-wordpress/widget/build"
 
 ## Getting Started with Create React App
 
