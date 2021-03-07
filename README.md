@@ -2,6 +2,12 @@
 
 "homepage": "/wp-content/plugins/react-wordpress/widget/build"
 
+# How it works together :
+- This repo is a source of [Hairdresser's customers web app](https://janamelicharova.cz/#/customers)
+- After `yarn build` we take the build folder, and load it into [`hairdressers-react-wordpress-glue`](https://github.com/marekmelichar/hairdressers-react-wordpress-glue) repo
+- [`hairdressers-react-wordpress-glue`](https://github.com/marekmelichar/hairdressers-react-wordpress-glue) repo provides us the shortcode `[erw_widget]`, which we can take and use it inside any theme, but for this purpose we are using the intentionally empty `hairdressers-theme-master`
+- Then we use the REST API plugin repo [`hairdressers-customers-api`](https://github.com/marekmelichar/hairdressers-customers-api)
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
